@@ -1,47 +1,27 @@
 import Link from "next/link";
 import { Github as LucideGithub } from "lucide-react";
-import Image from "next/image";
-
-interface ProjectLink {
-  href: string | null;
-  text: string;
-  description: string;
-  icon: string;
-  iconDark?: string;
-  isNew?: boolean;
-}
 
 export function Footer() {
-  const socialLinks = [
-    {
-      href: "#",
-      icon: (
-        <LucideGithub className="w-5 h-5 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors" />
-      ),
-    },
-  ];
-
   return (
-    <footer className="border-t border-zinc-200 dark:border-zinc-800">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8 flex flex-col items-center space-y-6 text-center">
-        {/* Social Links */}
-        <div className="flex gap-4">
-          {socialLinks.map((link, index) => (
-            <Link
-              key={index}
-              href={link.href || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {link.icon}
-            </Link>
-          ))}
+    <footer className="border-t border-blue-900/40 bg-[#0B1220]">
+      <div className="mx-auto max-w-[1400px] px-4 py-4 flex items-center justify-between text-sm text-zinc-500">
+        
+        {/* Left */}
+        <span className="text-zinc-500">
+          © {new Date().getFullYear()} DevBox
+        </span>
+
+        {/* Right */}
+        <div className="flex items-center gap-3">
+          <Link
+            href="https://github.com/coder-tejas/DevBox"
+            target="_blank"
+            className="text-zinc-400 hover:text-blue-400 transition"
+          >
+            <LucideGithub className="w-5 h-5" />
+          </Link>
         </div>
 
-        {/* Copyright Notice */}
-        <p className="text-sm text-zinc-500 dark:text-zinc-400">
-          &copy; {new Date().getFullYear()} Codesnippet. All rights reserved.
-        </p>
       </div>
     </footer>
   );
