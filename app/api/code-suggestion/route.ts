@@ -50,6 +50,7 @@ export async function POST(request: NextRequest) {
         generatedAt: new Date().toISOString(),
       },
     })
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     console.error("Context analysis error:", error)
     return NextResponse.json({ error: "Internal server error", message: error.message }, { status: 500 })
@@ -238,6 +239,7 @@ function detectIncompletePatterns(line: string, column: number): string[] {
   return patterns
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getLastNonEmptyLine(lines: string[], currentLine: number): string {
   for (let i = currentLine - 1; i >= 0; i--) {
     const line = lines[i]

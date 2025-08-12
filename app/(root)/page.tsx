@@ -13,7 +13,7 @@ import UserButton from "@/features/auth/components/user-button";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [stars, setStars] = useState([]);
+  const [stars, setStars] = useState<Array<{ id: number; left: number; top: number; size: number; delay: number }>>([]);
 
   useEffect(() => {
     const newStars = Array.from({ length: 50 }, (_, i) => ({
@@ -26,7 +26,8 @@ export default function Home() {
     setStars(newStars);
   }, []);
 
-  const handleMouseMove = (e) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleMouseMove = (e: { clientX: any; clientY: any; }) => {
     setMousePosition({ x: e.clientX, y: e.clientY });
   };
 

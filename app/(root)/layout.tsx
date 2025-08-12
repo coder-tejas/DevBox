@@ -1,6 +1,4 @@
-import { Footer } from "@/features/home/footer";
-import { Header } from "@/features/home/header";
-import { cn } from "@/lib/utils";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,8 +16,6 @@ export default function HomeLayout({
   return (
     <>
       {/* <Header /> */}
-
-
       <main className="z-20 relative w-full pt-0 md:pt-0  ">{children}</main>
       {/* <Footer /> */}
     </>

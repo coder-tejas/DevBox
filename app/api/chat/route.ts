@@ -141,6 +141,7 @@ export async function POST(req: NextRequest) {
 
     const validHistory = Array.isArray(history)
       ? history.filter(
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (msg: any) =>
             msg &&
             typeof msg === "object" &&

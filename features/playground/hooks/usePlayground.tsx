@@ -7,6 +7,7 @@ import type { TemplateFolder } from '@/features/playground/libs/path-to-json';
 interface PlaygroundData {
   id: string;
   name?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }
 

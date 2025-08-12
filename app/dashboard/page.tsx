@@ -25,11 +25,14 @@ const DashboardMainPage = async () => {
         {playgrounds && playgrounds.length === 0 ? (
           <EmptyState />
         ) : (
-          // @ts-ignore
           <ProjectTable
-            projects={playgrounds || []}
-            onDeleteProject={deleteProjectById}
-            onUpdateProject={editProjectById}
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
+          projects={playgrounds || []}
+          onDeleteProject={deleteProjectById}
+          onUpdateProject={editProjectById}
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
             onDuplicateProject={duplicateProjectById}
           />
         )}

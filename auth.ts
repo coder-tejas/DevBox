@@ -13,7 +13,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
     /**
      * Handle user creation and account linking after a successful sign-in
      */
-    async signIn({ user, account, profile }) {
+    async signIn({ user, account }) {
       if (!user || !account) return false;
 
       // Check if the user already exists
@@ -30,7 +30,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
             image: user.image,
            
             accounts: {
-              // @ts-ignore
+              
               create: {
                 type: account.type,
                 provider: account.provider,
